@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, scale=2.0">
+    <title>Formularios de Aprendizaje</title>
+</head>
+<style type="text/css">
+    
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(150deg, #1976d2, #a569bd);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1{
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3 {
+    color: #555;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:focus {
+    outline: none;
+}
+
+#resultado-visual, #resultado-kine, #resultado-audi {
+    font-weight: bold;
+    color: #333;
+}
+
+#form-visual, #form-kine, #form-audi {
+    margin-bottom: 30px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+form {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.container + .container {
+    margin-top: 40px;
+}
+
+</style>
+
+<body>
+    <header>
+        <h1>Test de Aprendizaje</h1>
+    </header>
+
+       <div class="container">
+        <form  action="conexion.php" method="POST" id="form-visual">
+            <h2> Sección Visual</h2>
+            <section id="p1">
+                <h3> ¿Cuál de los siguientes métodos de estudio te resulta más efectivo? </h3>
+                <label><input type="radio" value="1" name="p1" onclick="respuesta(1, this, 'visual')"> Leer y subrayar el texto</label>
+                <label><input type="radio" value="2" name="p1" onclick="respuesta(1, this, 'visual')"> Escuchar las lecciones grabadas</label>
+                <label><input type="radio" value="3" name="p1" onclick="respuesta(1, this, 'visual')"> Hacer esquemas o diagramas</label>
+                <label><input type="radio" value="4" name="p1" onclick="respuesta(1, this, 'visual')"> Ver videos o presentaciones visuales</label>
+
+                <h3> ¿Qué te ayuda más a aprender sobre el cuerpo humano y sus funciones? </h3>
+                <label><input type="radio" value="1" name="p2" onclick="respuesta(2, this, 'visual')"> Leer libros de texto</label>
+                <label><input type="radio" value="2" name="p2" onclick="respuesta(2, this, 'visual')"> Escuchar conferencias o podcasts</label>
+                <label><input type="radio" value="3" name="p2" onclick="respuesta(2, this, 'visual')"> Ver ilustraciones o modelos anatómicos</label>
+                <label><input type="radio" value="4" name="p2" onclick="respuesta(2, this, 'visual')"> Realizar experimentos o prácticas en laboratorios</label>
+
+                <h3> ¿Cómo te sientes más cómodo/a siguiendo instrucciones de montaje o reparación? </h3>
+                <label><input type="radio" value="1" name="p3" onclick="respuesta(3, this, 'visual')"> Observando diagramas o imágenes ilustrativas</label>
+                <label><input type="radio" value="2" name="p3" onclick="respuesta(3, this, 'visual')"> Leyendo un manual paso a paso</label>
+                <label><input type="radio" value="3" name="p3" onclick="respuesta(3, this, 'visual')"> Siguiendo instrucciones verbales</label>
+                <label><input type="radio" value="4" name="p3" onclick="respuesta(3, this, 'visual')"> Experimentando y probando diferentes métodos</label>
+
+                <h3> ¿Qué te resulta más efectivo para aprender vocabulario nuevo en un idioma extranjero? </h3>
+                <label><input type="radio" value="1" name="p4" onclick="respuesta(4, this, 'visual')"> Leer y escribir las palabras repetidamente</label>
+                <label><input type="radio" value="2" name="p4" onclick="respuesta(4, this, 'visual')"> Ver imágenes o asociar las palabras con objetos visuales</label>
+                <label><input type="radio" value="3" name="p4" onclick="respuesta(4, this, 'visual')"> Escuchar y repetir las palabras en voz alta </label>
+                <label><input type="radio" value="4" name="p4" onclick="respuesta(4, this, 'visual')"> Practicar las palabras en conversaciones reales</label>
+
+                <h3> ¿Cómo prefieres aprender sobre la historia o eventos pasados? </h3>
+                <label><input type="radio" value="1" name="p5" onclick="respuesta(5, this, 'visual')"> Leyendo libros y artículos </label>
+                <label><input type="radio" value="2" name="p5" onclick="respuesta(5, this, 'visual')"> Escuchando audiolibros o conferencias</label>
+                <label><input type="radio" value="3" name="p5" onclick="respuesta(5, this, 'visual')"> Viendo documentales o imágenes históricas</label>
+                <label><input type="radio" value="4" name="p5" onclick="respuesta(5, this, 'visual')"> Participando en recreaciones o visitas a lugares históricos</label>
+
+                <h3> ¿Cómo te sientes más cómodo/a resolviendo problemas matemáticos o de lógica? </h3>
+                <label><input type="radio" value="1" name="p6" onclick="respuesta(6, this, 'visual')"> Realizando cálculos y anotaciones escritas</label>
+                <label><input type="radio" value="2" name="p6" onclick="respuesta(6, this, 'visual')"> Explicando los pasos en voz alta</label>
+                <label><input type="radio" value="3" name="p6" onclick="respuesta(6, this, 'visual')"> Resolviendo problemas prácticos en situaciones reales</label>
+                <label><input type="radio" value="4" name="p6" onclick="respuesta(6, this, 'visual')"> Visualizando el problema y utilizando diagramas o gráficos</label>
+
+                <h3> ¿Cómo prefieres estudiar geografía o mapas? </h3>
+                <label><input type="radio" value="1" name="p7" onclick="respuesta(7, this, 'visual')"> Viendo mapas o elementos representativos</label>
+                <label><input type="radio" value="2" name="p7" onclick="respuesta(7, this, 'visual')"> Leyendo descripciones de lugares</label>
+                <label><input type="radio" value="3" name="p7" onclick="respuesta(7, this, 'visual')"> Escuchando descripciones de lugares</label>
+                <label><input type="radio" value="4" name="p7" onclick="respuesta(7, this, 'visual')"> Explorando los lugares en persona</label>
+            </section>
+
+            <h2>Resultado Visual: <span id="resultado-visual"></span></h2>
+            <button type="button" onclick="mostrarResultadoVisual()">Mostrar resultado del test Visual</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <form action="conexion.php" method="POST"  id="form-kine">
+            <h2> Sección Kinestésica </h2>
+            <section id="p2">
+                <h3> ¿Cómo te sientes más cómodo estudiando para un examen? </h3>
+                <label><input type="radio" value="1" name="p8" onclick="respuesta(1, this, 'kine')"> Sentado en un lugar tranquilo, leyendo y tomando notas</label>
+                <label><input type="radio" value="2" name="p8" onclick="respuesta(1, this, 'kine')"> Escuchando grabaciones de tus propias explicaciones o de profesores</label>
+                <label><input type="radio" value="3" name="p8" onclick="respuesta(1, this, 'kine')"> Haciendo ejercicios prácticos o practicando problemas</label>
+                <label><input type="radio" value="4" name="p8" onclick="respuesta(1, this, 'kine')"> Explicando el tema a alguien más</label>
+
+                <h3> Cuando conoces a alguien por primera vez, ¿Qué haces para recordar su nombre? </h3>
+                <label><input type="radio" value="1" name="p9" onclick="respuesta(2, this, 'kine')"> Intentas relacionar su nombre con una imagen o algo visual </label>
+                <label><input type="radio" value="2" name="p9" onclick="respuesta(2, this, 'kine')"> Repites su nombre en voz alta varias veces </label>
+                <label><input type="radio" value="3" name="p9" onclick="respuesta(2, this, 'kine')"> Te estrechas la mano o interactúas físicamente de alguna manera</label>
+                <label><input type="radio" value="4" name="p9" onclick="respuesta(2, this, 'kine')"> Mencionas repetidamente el nombre en una conversación</label>
+
+                <h3> ¿Qué actividades disfrutas más? </h3>
+                <label><input type="radio" value="1" name="p10" onclick="respuesta(3, this, 'kine')"> Leer libros o artículos </label>
+                <label><input type="radio" value="2" name="p10" onclick="respuesta(3, this, 'kine')"> Escuchar música, podcasts o conferencias </label>
+                <label><input type="radio" value="3" name="p10" onclick="respuesta(3, this, 'kine')"> Practicar deportes, hacer manualidades o realizar actividades al aire libre </label>
+                <label><input type="radio" value="4" name="p10" onclick="respuesta(3, this, 'kine')"> Ninguna</label>
+
+                <h3> Cuando tienes que aprender una nueva habilidad, ¿Cómo prefieres hacerlo? </h3>
+                <label><input type="radio" value="1" name="p11" onclick="respuesta(4, this, 'kine')">  Siguiendo instrucciones escritas o en forma de diagramas </label>
+                <label><input type="radio" value="2" name="p11" onclick="respuesta(4, this, 'kine')"> Copiando a alguien más</label>
+                <label><input type="radio" value="3" name="p11" onclick="respuesta(4, this, 'kine')"> Escuchando a alguien explicar los pasos</label>
+                <label><input type="radio" value="4" name="p11" onclick="respuesta(4, this, 'kine')"> Intentando hacerlo tú mismo mientras recibes retroalimentación directa</label>
+
+                <h3> ¿Cómo te sientes cuando tienes que permanecer sentado durante largos períodos de tiempo sin moverte? </h3>
+                <label><input type="radio" value="1" name="p12" onclick="respuesta(5, this, 'kine')">  Me siento bien y puedo concentrarme fácilmente </label>
+                <label><input type="radio" value="2" name="p12" onclick="respuesta(5, this, 'kine')"> Me siento incómodo y necesito moverme constantemente</label>
+                <label><input type="radio" value="3" name="p12" onclick="respuesta(5, this, 'kine')"> No me afecta en nada</label>
+                <label><input type="radio" value="4" name="p12" onclick="respuesta(5, this, 'kine')"> Me siento inquieto y me cuesta concentrarme</label>
+
+                <h3> Cuando tengo que aprender algo nuevo, prefiero: </h3>
+                <label><input type="radio" value="1" name="p13" onclick="respuesta(6, this, 'kine')"> Hacerlo o experimentar físicamente </label>
+                <label><input type="radio" value="2" name="p13" onclick="respuesta(6, this, 'kine')"> Escuchar a alguien explicarlo en detalle </label>
+                <label><input type="radio" value="3" name="p13" onclick="respuesta(6, this, 'kine')"> Leer sobre el tema y tomar notas</label>
+                <label><input type="radio" value="4" name="p13" onclick="respuesta(6, this, 'kine')"> Repetir lo aprendido una y otra vez</label>
+
+                <h3> ¿Cómo prefieres aprender a realizar una actividad práctica, como montar un mueble o cocinar una receta? </h3>
+                <label><input type="radio" value="1" name="p14" onclick="respuesta(7, this, 'kine')"> Leyendo las instrucciones paso a paso </label>
+                <label><input type="radio" value="2" name="p14" onclick="respuesta(7, this, 'kine')"> Mirando un video tutorial donde se muestra el proceso</label>
+                <label><input type="radio" value="3" name="p14" onclick="respuesta(7, this, 'kine')"> Siguiendo las indicaciones de una persona que me explica mientras hago la actividad </label>
+                <label><input type="radio" value="4" name="p14" onclick="respuesta(7, this, 'kine')"> Practicando directamente por mí mismo/a sin seguir instrucciones previas </label>
+                
+            </section>
+
+            <h2>Resultado Kinestésico: <span id="resultado-kine"></span></h2>
+            <button type="button" onclick="mostrarResultadoKine()">Mostrar resultado del test Kinestésico</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <form action="conexion.php" method="POST"  id="form-audi">
+            <h2> Sección Auditiva </h2>
+            <section id="p3">
+                <h3> ¿Cuál de las siguientes opciones prefieres para estudiar? </h3>
+                <label><input type="radio" value="1" name="p15" onclick="respuesta(1, this, 'audi')"> Leer en voz alta lo que estoy estudiando </label>
+                <label><input type="radio" value="2" name="p15" onclick="respuesta(1, this, 'audi')"> Escuchar podcasts o grabaciones relacionadas con el tema</label>
+                <label><input type="radio" value="3" name="p15" onclick="respuesta(1, this, 'audi')"> Leer en silencio y luego hablar sobre el tema</label>
+                <label><input type="radio" value="4" name="p15" onclick="respuesta(1, this, 'audi')"> Hacer preguntas y discutir sobre el tema con otros</label>
+
+                <h3> ¿Cómo te sientes más cómodo/a aprendiendo música o ritmos? </h3>
+                <label><input type="radio" value="1" name="p16" onclick="respuesta(1, this, 'audi')"> Leyendo partituras y notación musical </label>
+                <label><input type="radio" value="2" name="p16" onclick="respuesta(1, this, 'audi')"> Observando y copiando los movimientos de alguien que toca un instrumento </label>
+                <label><input type="radio" value="3" name="p16" onclick="respuesta(1, this, 'audi')"> Escuchando atentamente los ritmos y melodías </label>
+                <label><input type="radio" value="4" name="p16" onclick="respuesta(1, this, 'audi')"> Practicando y tocando instrumentos o haciendo ritmos con tu cuerpo </label>
+
+                <h3> ¿Cómo prefieres estudiar para un discurso o presentación oral? </h3>
+                <label><input type="radio" value="1" name="p17" onclick="respuesta(2, this, 'audi')"> Leyendo el texto del discurso y practicando la pronunciación </label>
+                <label><input type="radio" value="2" name="p17" onclick="respuesta(2, this, 'audi')"> Escuchando grabaciones de discursos y practicando la entonación </label>
+                <label><input type="radio" value="3" name="p17" onclick="respuesta(2, this, 'audi')"> Viendo videos de presentaciones orales </label>
+                <label><input type="radio" value="4" name="p17" onclick="respuesta(2, this, 'audi')">  Haciendo ensayos y presentando ante un público </label>
+
+                <h3> ¿Cómo prefieres aprender nuevas canciones o melodías?  </h3>
+                <label><input type="radio" value="1" name="p18" onclick="respuesta(3, this, 'audi')"> Escuchando la canción repetidamente y siguiendo el ritmo y las melodías </label>
+                <label><input type="radio" value="2" name="p18" onclick="respuesta(3, this, 'audi')"> Leyendo las partituras o letras de las canciones </label>
+                <label><input type="radio" value="3" name="p18" onclick="respuesta(3, this, 'audi')"> Observando a alguien tocar o cantar la canción </label>
+                <label><input type="radio" value="4" name="p18" onclick="respuesta(3, this, 'audi')"> Practicando y tocando la canción en un instrumento</label>
+
+                <h3> ¿Qué te ayuda más a recordar conversaciones o discusiones? </h3>
+                <label><input type="radio" value="1" name="p19" onclick="respuesta(4, this, 'audi')"> Tomar notas escritas durante la conversación </label>
+                <label><input type="radio" value="2" name="p19" onclick="respuesta(4, this, 'audi')"> Ver el lenguaje corporal y expresiones faciales de las personas </label>
+                <label><input type="radio" value="3" name="p19" onclick="respuesta(4, this, 'audi')"> Escuchar atentamente las palabras y tono de voz de las personas </label>
+                <label><input type="radio" value="4" name="p19" onclick="respuesta(4, this, 'audi')"> Participar activamente en la conversación </label>
+
+                <h3> ¿Qué te resulta más útil para recordar información? </h3>
+                <label><input type="radio" value="1" name="p20" onclick="respuesta(5, this, 'audi')"> Ver gráficos o imágenes relacionadas </label>
+                <label><input type="radio" value="2" name="p20" onclick="respuesta(5, this, 'audi')"> Escuchar una explicación oral </label>
+                <label><input type="radio" value="3" name="p20" onclick="respuesta(5, this, 'audi')"> Leer y subrayar el texto</label>
+                <label><input type="radio" value="4" name="p20" onclick="respuesta(5, this, 'audi')"> Escuchar audios grabaciones sobre el tema </label>
+
+                <h3> ¿Cuál de las siguientes opciones te ayuda más a aprender a usar una nueva aplicación o programa de computadora? </h3>
+                <label><input type="radio" value="1" name="p21" onclick="respuesta(6, this, 'audi')"> Ver un tutorial en video donde se mueestren los pasos</label>
+                <label><input type="radio" value="2" name="p21" onclick="respuesta(6, this, 'audi')"> Escuchar un podcast con explicaciones detalladas</label>
+                <label><input type="radio" value="3" name="p21" onclick="respuesta(6, this, 'audi')"> Leer un manual de instrucciones que explica cómo haerlo</label>
+                <label><input type="radio" value="4" name="p21" onclick="respuesta(6, this, 'audi')"> Experimentar por ti mismo/a usando la aplicación</label>
+
+            </section>
+
+            <h2>Resultado Auditivo: <span id="resultado-audi"></span></h2>
+            <button type="button" onclick="mostrarResultadoAudi()">Mostrar resultado del test Auditivo</button>
+        </form>
+    </div>
+
+    <script>
+        let respuestas = {
+            visual: [],
+            kine: [],
+            audi: []
+        };
+
+        let correctas = {
+            visual: [4, 3, 1, 2, 3, 4, 1],
+            kine: [3, 3, 3, 4, 2, 1, 4],
+            audi: [3, 2, 1, 3, 4, 2]
+        };
+
+        function respuesta(npreguta, seleccionada, tipo) {
+            respuestas[tipo][npreguta - 1] = parseInt(seleccionada.value);
+
+            let id = "p" + npreguta;
+            let labels = document.getElementById(id).getElementsByTagName("label");
+            for (let label of labels) {
+                label.style.backgroundColor = "white";
+            }
+            seleccionada.parentNode.style.backgroundColor = "#cec0fc";
+        }
+
+        function mostrarResultadoVisual() {
+            let cantcorrVisual = 0;
+            for (let i = 0; i < correctas.visual.length; i++) {
+                if (correctas.visual[i] === respuestas.visual[i]) {
+                    cantcorrVisual++;
+                }
+            }
+            document.getElementById("resultado-visual").innerHTML = cantcorrVisual;
+        }
+
+        function mostrarResultadoKine() {
+            let cantcorrKine = 0;
+            for (let i = 0; i < correctas.kine.length; i++) {
+                if (correctas.kine[i] === respuestas.kine[i]) {
+                    cantcorrKine++;
+                }
+            }
+            document.getElementById("resultado-kine").innerHTML = cantcorrKine;
+        }
+
+        function mostrarResultadoAudi() {
+            let cantcorrAudi = 0;
+            for (let i = 0; i < correctas.audi.length; i++) {
+                if (correctas.audi[i] === respuestas.audi[i]) {
+                    cantcorrAudi++;
+                }
+            }
+            document.getElementById("resultado-audi").innerHTML = cantcorrAudi;
+        }
+
+    </script>
+</body>
+</html>

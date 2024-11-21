@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Orientación Profesional</title>
+</head>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(150deg, #1976d2, #a569bd);
+            color: #333;
+        }
+
+        h1, h2 {
+            margin-top: 30px;
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            margin-top: 20px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section hr {
+            border: 1px solid #ddd;
+            margin: 20px 0;
+        }
+
+        .form-section h2 {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .form-section label {
+            font-size: 1rem;
+        }
+
+        .form-section input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        button[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        #resultado {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+<body>
+    <h1>Formulario de Orientación Profesional</h1>
+
+    <form action="cone.php" method="POST" id="formulario" onsubmit="procesarFormulario(event)">
+
+        <h2>Área de la Salud</h2>
+
+        <label> ¿Te interesa ayudar a las personas a sentirse mejor físicamente?</label><br>
+        <input type="radio" name="salu1" value="a">  Sí, me gustaría trabajar directamente con los pacientes.<br>
+        <input type="radio" name="salu1" value="b">  No, prefiero tratar problemas más teóricos.<br>
+        <input type="radio" name="salu1" value="c">  Me interesa la salud, pero en un ámbito de investigación.<br>
+        <input type="radio" name="salu1" value="d">  No estoy seguro/a.<br>
+        <input type="radio" name="salu1" value="e">  No, me interesa más el aspecto administrativo.<br>
+
+        <label> ¿Disfrutas de las ciencias biológicas?</label><br>
+        <input type="radio" name="salu2" value="a">  Sí, me encanta estudiar el cuerpo humano y cómo funciona.<br>
+        <input type="radio" name="salu2" value="b">  Me interesa más la ciencia aplicada que la teoría.<br>
+        <input type="radio" name="salu2" value="c">  No mucho, prefiero las ciencias sociales.<br>
+        <input type="radio" name="salu2" value="d">  Sí, pero solo como pasatiempo, no como carrera.<br>
+        <input type="radio" name="salu2" value="e">  No, no me atraen mucho las ciencias biológicas.<br>
+
+        <label> ¿Te gustaría trabajar en un ambiente que involucre emergencias o situaciones críticas?</label><br>
+        <input type="radio" name="salu3" value="a">  Sí, me gustaría ser médico de urgencias o paramédico.<br>
+        <input type="radio" name="salu3" value="b">  No, prefiero un ambiente tranquilo.<br>
+        <input type="radio" name="salu3" value="c">  Me gustaría en el futuro, pero no en este momento.<br>
+        <input type="radio" name="salu3" value="d">  No, me interesa más la prevención.<br>
+        <input type="radio" name="salu3" value="e">  Sí, pero en un área diferente, como la investigación.<br>
+
+        <label> ¿Prefieres actividades que impliquen trabajo en equipo?</label><br>
+        <input type="radio" name="salu4" value="a">  Sí, trabajar con otros es fundamental para mi carrera ideal.<br>
+        <input type="radio" name="salu4" value="b">  No, prefiero trabajar solo/a.<br>
+        <input type="radio" name="salu4" value="c">  Me gusta trabajar en equipo en ciertas circunstancias.<br>
+        <input type="radio" name="salu4" value="d">  Depende de la actividad.<br>
+        <input type="radio" name="salu4" value="e">  Prefiero el trabajo individual.<br>
+
+        <label> ¿Te interesa estudiar y entender los avances médicos y tratamientos?</label><br>
+        <input type="radio" name="salu5" value="a"> Sí, me fascinan los avances en medicina.<br>
+        <input type="radio" name="salu5" value="b"> No, prefiero otras áreas del conocimiento.<br>
+        <input type="radio" name="salu5" value="c"> Sí, pero solo si puedo aplicarlos directamente.<br>
+        <input type="radio" name="salu5" value="d"> Me gustaría, pero en un ámbito administrativo.<br>
+        <input type="radio" name="salu5" value="e"> No mucho, no me llama la atención.<br>
+
+        <hr>
+
+        <h2>Área de Ingenierías</h2>
+
+        <label> ¿Disfrutas de resolver problemas complejos utilizando matemáticas?</label><br>
+        <input type="radio" name="ingen6" value="a"> Sí, me encanta resolver ecuaciones y problemas técnicos<br>
+        <input type="radio" name="inge6" value="b"> No mucho, prefiero otras áreas<br>
+        <input type="radio" name="inge6" value="c"> Solo si se aplica a situaciones prácticas<br>
+        <input type="radio" name="inge6" value="d"> Me interesa, pero no soy un experto/a<br>
+        <input type="radio" name="inge6" value="e"> No me atraen las matemáticas<br>
+
+        <label> ¿Te gustaría trabajar en proyectos que involucren construcción o diseño de sistemas?</label><br>
+        <input type="radio" name="inge7" value="a"> Sí, quiero ser ingeniero civil o de diseño<br>
+        <input type="radio" name="inge7" value="b"> No, no me interesa la construcción<br>
+        <input type="radio" name="inge7" value="c"> Me gustaría si se trata de tecnología<br>
+        <input type="radio" name="inge7" value="d"> Sí, pero prefiero trabajar con software<br>
+        <input type="radio" name="inge7" value="e"> No, prefiero otros tipos de proyectos<br>
+
+        <label>¿Te interesan las nuevas tecnologías y cómo mejoran la vida diaria?</label><br>
+        <input type="radio" name="inge8" value="a"> Sí, me gustaría trabajar en el desarrollo de nuevas tecnologías<br>
+        <input type="radio" name="inge8" value="b"> No tanto, prefiero las áreas más tradicionales<br>
+        <input type="radio" name="inge8" value="c"> Me interesa, pero en un campo específico como la robótica<br>
+        <input type="radio" name="inge8" value="d"> No, no me interesa tanto la tecnología<br>
+        <input type="radio" name="inge8" value="e"> Sí, pero en un campo no técnico, como la administración de proyectos<br>
+
+        <label> ¿Disfrutas de trabajar con máquinas, computadoras o aparatos electrónicos?</label><br>
+        <input type="radio" name="inge9" value="a"> Sí, me encanta trabajar con tecnología y equipos<br>
+        <input type="radio" name="inge9" value="b"> No mucho, prefiero el trabajo teórico<br>
+        <input type="radio" name="inge9" value="c"> Sí, pero en un área más relacionada con la programación<br>
+        <input type="radio" name="inge9" value="d"> No, me interesa más la creatividad<br>
+        <input type="radio" name="inge9" value="e"> Sí, pero no en un entorno técnico<br>
+
+        <label> ¿Tienes curiosidad sobre cómo funcionan los procesos industriales o el desarrollo de nuevos productos?</label><br>
+        <input type="radio" name="inge10" value="a">  Sí, me gustaría ser ingeniero industrial o de procesos<br>
+        <input type="radio" name="inge10" value="b">  No, no me interesa la producción<br>
+        <input type="radio" name="inge10" value="c">  Me interesa solo en el área tecnológica<br>
+        <input type="radio" name="inge10" value="d">  Sí, pero solo desde un punto de vista teórico<br>
+        <input type="radio" name="inge10" value="e">  No, no me interesa la ingeniería industrial<br>
+
+        <hr>
+
+  
+        <h1>Formulario de Orientación Profesional</h1>
+
+        <form id="formulario">
+
+        <h2>Área de Artes</h2>
+        <label> ¿Te apasiona la creación de obras visuales como pintura, escultura o diseño gráfico? </label><br>
+        <input type="radio" name="arte11" value="a"> Sí, me gustaría estudiar Bellas Artes o Diseño <br>
+        <input type="radio" name="arte11" value="b"> No, prefiero otras disciplinas <br>
+        <input type="radio" name="arte11" value="c"> Me interesa, pero solo como hobby <br>
+        <input type="radio" name="arte11" value="d"> Sí, pero me interesa más la parte digital <br>
+        <input type="radio" name="arte11" value="e"> No, no tengo interés en las artes visuales <br>
+
+        <label> ¿Disfrutas de expresarte a través de la música o la danza? </label><br>
+        <input type="radio" name="arte12" value="a"> Sí, quiero estudiar música o danza profesionalmente  <br>
+        <input type="radio" name="arte12" value="b"> No, prefiero expresarme de otras formas <br>
+        <input type="radio" name="arte12" value="c"> Me interesa, pero no quiero una carrera en ello <br>
+        <input type="radio" name="arte12" value="d"> Sí, pero solo de manera recreativa<br>
+        <input type="radio" name="arte12" value="e"> No, no me atraen esas áreas <br>
+
+        <label> ¿Te gustaría contar historias a través del cine o la fotografía? </label><br>
+        <input type="radio" name="arte13" value="a"> No, no me interesa la creación visual <br>
+        <input type="radio" name="arte13" value="b"> Sí, pero en un área más técnica como la edición <br>
+        <input type="radio" name="arte13" value="c"> Me gustaría, pero como hobby <br>
+        <input type="radio" name="arte13" value="d"> No, no me interesa el cine o la fotografía <br>
+        <input type="radio" name="arte13" value="e"> Sí, me gustaría ser director/a de cine o fotógrafo/a <br>
+
+        <label> ¿Te gusta crear o modificar objetos o espacios de manera creativa? </label><br>
+        <input type="radio" name="arte14" value="a"> Sí, me gustaría estudiar arquitectura o diseño de interiores <br>
+        <input type="radio" name="arte14" value="b"> No, no me interesa la creación de espacios <br>
+        <input type="radio" name="arte14" value="c"> Me gusta pero no quiero hacer de eso mi carrera<br>
+        <input type="radio" name="arte14" value="d"> Sí, pero más en áreas relacionadas con la tecnología<br>
+        <input type="radio" name="arte14" value="e"> No, no me atrae la creación de espacios <br>
+
+        <label> ¿Disfrutas de aprender sobre la historia del arte y sus diferentes estilos? </label><br>
+        <input type="radio" name="arte15" value="a"> Sí, me gustaría estudiar historia del arte <br>
+        <input type="radio" name="arte15" value="b"> No, prefiero áreas más técnicas<br>
+        <input type="radio" name="arte15" value="c"> Me interesa, pero no quiero especializarme en ello<br>
+        <input type="radio" name="arte15" value="d"> Sí, pero solo como pasatiempo <br>
+        <input type="radio" name="arte15" value="e"> No, no me atrae la historia del arte<br>
+
+        <hr>
+
+        <h2>Área de Negocios y Economía</h2>
+
+        <label> ¿Te interesa analizar datos financieros y tomar decisiones estratégicas? </label><br>
+        <input type="radio" name="neec16" value="a"> Sí, me interesa demasiado <br>
+        <input type="radio" name="neec16" value="b"> No, prefiero otro tipo de trabajo <br>
+        <input type="radio" name="neec16" value="c"> Me interesa, pero no en un entorno financiero <br>
+        <input type="radio" name="neec16" value="d"> Sí, pero desde una perspectiva de marketing <br>
+        <input type="radio" name="neec16" value="e"> No, no me atrae mucho la economía <br>
+
+        <label> ¿Te gustaría gestionar una empresa o un equipo de trabajo? </label><br>
+        <input type="radio" name="neec17" value="a"> Sí, quiero ser gerente o director/a <br>
+        <input type="radio" name="neec17" value="b"> No, prefiero trabajar en una posición técnica <br>
+        <input type="radio" name="neec17" value="c"> Me gustaría, pero no en una empresa grande <br>
+        <input type="radio" name="neec17" value="d"> Sí, pero solo en un área creativa <br>
+        <input type="radio" name="neec17" value="e"> No, no me interesa el liderazgo <br>
+
+        <label> ¿Disfrutas de analizar problemas y encontrar soluciones prácticas para los negocios? </label><br>
+        <input type="radio" name="neec18" value="a"> Sí, me interesa mucho la consultoría empresarial <br>
+        <input type="radio" name="neec18" value="b"> No, prefiero otros tipos de análisis <br>
+        <input type="radio" name="neec18" value="c"> Me interesa, pero no en un campo empresarial <br>
+        <input type="radio" name="neec18" value="d"> Sí, pero solo en un área específica como el marketing <br>
+        <input type="radio" name="neec18" value="e"> No, no me atrae la resolución de problemas empresariales <br>
+
+        <label> ¿Te atrae la idea de trabajar en un entorno competitivo? </label><br>
+        <input type="radio" name="neec19" value="a"> Sí, me gustaría trabajar en un entorno dinámico y competitivo <br>
+        <input type="radio" name="neec19" value="b"> No, prefiero trabajos más tranquilos<br>
+        <input type="radio" name="neec19" value="c"> Me interesa, pero solo en un ambiente más colaborativo <br>
+        <input type="radio" name="neec19" value="d"> Sí, pero en una empresa más orientada a la sostenibilidad <br>
+        <input type="radio" name="neec19" value="e"> No, no me interesa trabajar en ambientes competitivos <br>
+
+        <label> ¿Te interesa emprender tu propio negocio o proyecto? </label><br>
+        <input type="radio" name="neec20" value="a"> Sí, quiero crear mi propia empresa <br>
+        <input type="radio" name="neec20" value="b"> No, prefiero trabajar en una empresa ya establecida <br>
+        <input type="radio" name="neec20" value="c"> Me interesa, pero con un enfoque más social<br>
+        <input type="radio" name="neec20" value="d"> Sí, pero solo en el área tecnológica <br>
+        <input type="radio" name="neec20" value="e"> No, no me interesa emprender <br>
+
+        <hr>
+
+        <button type="submit">Obtener Recomendación</button>
+    </form>
+
+    <div id="resultado" style="margin-top: 20px;"></div>
+
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            let puntajes = {
+                salud: 0,
+                ingenieria: 0,
+                artes: 0,
+                negocios: 0
+            };
+
+            const respuestas = new FormData(event.target);
+
+            respuestas.forEach(function(value, name) {
+                if (name.includes("arte")) {
+                    puntajes.artes += 1;
+                } else if (name.includes("neec")) {
+                    puntajes.negocios += 1;
+                }
+
+            });
+
+            let areaRecomendada = Object.keys(puntajes).reduce(function(a, b) {
+                return puntajes[a] > puntajes[b] ? a : b;
+            });
+
+            let mensaje = '';
+            if (areaRecomendada === 'artes') {
+                mensaje = 'Por tus respuestas te recomendamos explorar áreas creativas como Bellas Artes, Diseño Gráfico, Fotografía o Música.';
+            } else if (areaRecomendada === 'negocios') {
+                mensaje = 'Por tus respuestas explorar áreas relacionadas con los negocios, como administración, marketing o emprendimiento.';
+            }
+
+            document.getElementById('resultado').innerText = mensaje;
+        });
+    </script>
+</body>
+</html>
+
